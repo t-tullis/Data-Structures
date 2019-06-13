@@ -1,8 +1,4 @@
 class Heap:
-  def __init__(self):
-    self.storage = []
-
-class Heap:
     def __init__(self):
         self.storage = []
 
@@ -18,7 +14,7 @@ class Heap:
             return self.storage.pop()
         else:
             self.storage[0], self.storage[len(
-                self.storage)-1] = self.storage[len(self.storage)-1], self.storage[0]
+                self.storage) - 1] = self.storage[len(self.storage)-1], self.storage[0]
             removed = self.storage.pop()
             self._sift_down(0)
 
@@ -31,7 +27,7 @@ class Heap:
         return len(self.storage)
 
     def _bubble_up(self, index):
-        p = (index-1) // 2
+        p = (index - 1) // 2
         if index <= 0:
             return
         elif self.storage[index] > self.storage[p]:
